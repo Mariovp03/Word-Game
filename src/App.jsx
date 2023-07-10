@@ -59,8 +59,7 @@ function App() {
 
     if(guessedLetters.length === uniqueLetters.length){
 
-      setScore((actualScore) => actualScore + 100);
-      gameScreen();
+      setScore((actualScore) => actualScore++);
     }
   }, [guessedLetters, letters, gameScreen])
 
@@ -103,7 +102,6 @@ function App() {
 
   return (
   <div className="App">
-
     {gameStage === 'Initial' && <InitialScreen startGame={gameScreen} />}
     {gameStage === 'Game' && <GameScreen 
      score={score}
